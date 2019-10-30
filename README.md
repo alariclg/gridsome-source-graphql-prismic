@@ -1,4 +1,4 @@
-Forked to be used with formik
+Forked to be used with prismic
 
 original: https://gridsome.org/plugins/@gridsome/source-graphql
 
