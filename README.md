@@ -17,7 +17,7 @@ original: https://gridsome.org/plugins/@gridsome/source-graphql
 module.exports = {
   plugins: [
     {
-      use: "@gridsome/source-graphql",
+      use: "gridsome-source-graphql-prismic",
       options: {
         url: "https://your-repository.prismic.io/graphql",
         fieldName: 'prismicio',
