@@ -2,30 +2,25 @@
 
 > Pull a remote GraphQL schema in locally
 
-## Install
-
-- `yarn add @gridsome/source-graphql`
-- `npm install @gridsome/source-graphql`
-
 ## Usage
 
 ```js
 module.exports = {
   plugins: [
     {
-      use: '@gridsome/source-graphql',
+      use: "@gridsome/source-graphql",
       options: {
-        url: 'https://example.com/api',
-        fieldName: 'puppies',
-        typeName: 'puppyTypes',
-
+        url: "https://your-repository.prismic.io/graphql",
+        fieldName: 'prismicio',
+        typeName: 'prismicio',
         headers: {
-          Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
-        },
-      },
-    },
-  ],
-}
+          'Prismic-Ref': ``,
+          'Authorization': `Token `,
+        }
+      }
+    }
+  ]
+};
 ```
 
 ## Options
