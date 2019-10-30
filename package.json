@@ -2,8 +2,11 @@
   "version": "0.1.0",
   "name": "gridsome-source-graphql-prismic",
   "description": "GraphQL source for Gridsome forked for a Primismic implementation",
-  "homepage": "https://github.com/gridsome/gridsome/tree/master/packages/source-graphql#readme",
-  "repository": "https://github.com/gridsome/gridsome/tree/master/packages/source-graphql",
+  "homepage": "https://github.com/alariclg/gridsome-source-graphql-prismic",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alariclg/gridsome-source-graphql-prismic"
+  },
   "main": "index.js",
   "keywords": [
     "gridsome",
