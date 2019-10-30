@@ -6,6 +6,11 @@ original: https://gridsome.org/plugins/@gridsome/source-graphql
 
 > Pull a remote GraphQL schema in locally
 
+## Install
+
+- `yarn add gridsome-source-graphql-prismic`
+- `npm install gridsome-source-graphql-prismic`
+
 ## Usage
 
 ```js
