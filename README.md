@@ -1,5 +1,6 @@
-# @gridsome/source-graphql
+# Gridsome-source-graphql-prismic
 
+> Forked on @gridsome/source-graphql
 > Pull a remote GraphQL schema in locally
 
 ## Usage
@@ -37,11 +38,11 @@ The URL of a GraphQL API endpoint to request your schema from.
 
 The name that should be used to namespace your remote schema when it's merged in, so that it doesn't conflict with any local data.
 
-For instance, if you put "puppies" your remote schema's data will be available by querying like so:
+For instance, if you put "prismicio" your remote schema's data will be available by querying like so:
 
 ```
 query {
-  puppies {
+  prismicio {
     helloWorld
   }
 }
