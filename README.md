@@ -1,6 +1,9 @@
-# Gridsome-source-graphql-prismic
+Forked to be used with formik
 
-> Forked on @gridsome/source-graphql
+original: https://gridsome.org/plugins/@gridsome/source-graphql
+
+# @gridsome/source-graphql
+
 > Pull a remote GraphQL schema in locally
 
 ## Usage
