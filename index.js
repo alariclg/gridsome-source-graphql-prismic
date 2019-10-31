@@ -20,12 +20,13 @@ class GraphQLSource {
       url: undefined,
       fieldName: undefined,
       typeName: undefined,
-      headers: {}
+      headers: {},
+      userMasterRef: undefined
     };
   }
 
   constructor(api, options) {
-    const { url, fieldName, headers } = options;
+    const { url, fieldName, headers, useMasterRef } = options;
     let typeName = options.typeName;
 
     // Make sure all required props are passed
@@ -46,7 +47,11 @@ class GraphQLSource {
 
     // Fetch schema, namespace it, and merge it into local schema
     api.createSchema(async ({ addSchema }) => {
-      const remoteSchema = await this.getRemoteExecutableSchema(url, headers);
+      const remoteSchema = await this.getRemoteExecutableSchema(
+        url,
+        headers,
+        useMasterRef
+      );
       const namespacedSchema = await this.namespaceSchema(
         remoteSchema,
         fieldName,
@@ -57,8 +62,24 @@ class GraphQLSource {
     });
   }
 
-  async getRemoteExecutableSchema(uri, headers) {
-    const http = new HttpLink({ uri, fetch, useGETForQueries: true });
+  async getRemoteExecutableSchema(uri, headers, useMasterRef) {
+    const graphqlUri = `${uri}/graphql`;
+    const http = new HttpLink({
+      uri: graphqlUri,
+      fetch,
+      useGETForQueries: true
+    });
+    if (useMasterRef) {
+      const data = await fetch(`${uri}/api`, { method: "GET" }).then(res =>
+        res.json()
+      );
+
+      headers["Prismic-Ref"] = data.refs.find(function (ref) {
+        if (ref.id === "master") {
+          return ref;
+        }
+      }).ref;
+    }
     const link = setContext(() => ({ headers })).concat(http);
     const remoteSchema = await introspectSchema(link);
 

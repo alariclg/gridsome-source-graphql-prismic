@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "name": "gridsome-source-graphql-prismic",
   "description": "GraphQL source for Gridsome forked for a Primismic implementation",
   "homepage": "https://github.com/alariclg/gridsome-source-graphql-prismic",

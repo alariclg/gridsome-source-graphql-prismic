@@ -19,13 +19,16 @@ module.exports = {
     {
       use: "gridsome-source-graphql-prismic",
       options: {
-        url: "https://your-repository.prismic.io/graphql",
+        url: "https://your-repository.prismic.io",
         fieldName: 'prismicio',
         typeName: 'prismicio',
-        headers: {
-          'Prismic-Ref': ``,
+
+        headers: { 
+          'Prismic-Ref': ``, // useMasterRef will erase this line
           'Authorization': `Token `,
         }
+
+        useMasterRef: true // undefinned by default
       }
     }
   ]
@@ -68,5 +71,11 @@ The prefix to be used for your imported schema's field types.
 - Type: `object`
 
 An object of headers to be passed along with your request to the API endpoint. This will generally be used to authenticate your request.
+
+#### useMasterRef
+
+- Type: `boolean`
+
+This boolean allows you to automaticaly use the Prismic master REF 
 
 **Note**: For safety, you should pass any sensitive tokens/passwords as environmental variables. To learn more, see the [Gridsome Docs on Environmental Variables](https://gridsome.org/docs/environment-variables/).
