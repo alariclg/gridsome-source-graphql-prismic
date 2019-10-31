@@ -72,8 +72,9 @@ class GraphQLSource {
 
     if (useMasterRef) {
       const res = await fetch(`${uri}/api`, { method: "GET" });
+      const data = await res.json();
 
-      headers["Prismic-Ref"] = await res.json().refs.find(ref => ref.id === "master").ref;
+      headers["Prismic-Ref"] = data.refs.find(ref => ref.id === "master").ref;
     }
 
     const link = setContext(() => ({ headers })).concat(http);
