@@ -24,11 +24,11 @@ module.exports = {
         typeName: 'prismicio',
 
         headers: { 
-          'Prismic-Ref': ``, // useMasterRef will erase this line
+          'Prismic-Ref': ``, // useMasterRef will overload this line
           'Authorization': `Token `,
         }
 
-        useMasterRef: true // undefinned by default
+        useMasterRef: true // undefined by default
       }
     }
   ]

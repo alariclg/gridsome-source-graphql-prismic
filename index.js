@@ -69,6 +69,7 @@ class GraphQLSource {
       fetch,
       useGETForQueries: true
     });
+
     if (useMasterRef) {
       const data = await fetch(`${uri}/api`, { method: "GET" }).then(res =>
         res.json()
@@ -80,6 +81,7 @@ class GraphQLSource {
         }
       }).ref;
     }
+
     const link = setContext(() => ({ headers })).concat(http);
     const remoteSchema = await introspectSchema(link);
 
