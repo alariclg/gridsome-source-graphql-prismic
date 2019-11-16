@@ -26,7 +26,7 @@ module.exports = {
         headers: { 
           'Prismic-Ref': ``, // useMasterRef will overload this line
           'Authorization': `Token `,
-        }
+        },
 
         useMasterRef: true // undefined by default
       }
@@ -71,6 +71,10 @@ The prefix to be used for your imported schema's field types.
 - Type: `object`
 
 An object of headers to be passed along with your request to the API endpoint. This will generally be used to authenticate your request.
+
+The `Prismic-Ref` can be found [here](https://user-guides.prismic.io/en/articles/2864318-view-your-api-easily-with-the-api-browser), it is called `Master Ref` there.
+
+For the `Authorization` token, follow this [guide](https://user-guides.prismic.io/en/articles/1036153-generating-an-access-token), it should look like something like ``` `Authorization': `Token ${process.env.AUTH_TOKEN}` ```
 
 #### useMasterRef
 
